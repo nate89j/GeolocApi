@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Api',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -73,13 +76,8 @@ WSGI_APPLICATION = 'GeolocApi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
+DATABASES = {'default': dj_database_url.config(default='postgres://bacgpjadiolobt:4096e6697ae51f3b253dbf5d01a3d5bcfeb297a35a47c6278870f2428e864dbf@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/d1rleviash9qtr')}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -118,3 +116,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+  
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+      
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+    
+}
