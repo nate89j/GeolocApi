@@ -36,3 +36,13 @@ urlpatterns = [
     ...
 ]
 
+For testing:
+send a post request via postman to http://127.0.0.1:8000/api/token/ with body: {"username": "username", "password": "password"} and we expect to see the output like this:
+{
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYxNDQ1NzEwOCwianRpIjoiMzExODY5NWI1MjIxNDkwNDllYTIyMDc1MDVhYmJmMzAiLCJ1c2VyX2lkIjoyfQ.6dtje7bF6-rB3UljRiYzNFZIAq7Yhdq9zp2Ruff-bp8",
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE0MzcxMDA4LCJqdGkiOiIxMzA3OTJkNDBkZWE0N2ZmYjgwZGRjNjdmNTBjYTZjYyIsInVzZXJfaWQiOjJ9.ukY1NHgIoafcpC2Aw0lvPXSyP-MX49LSnG66xSKkeIQ"
+}
+
+
+**DJANGO API**
+
