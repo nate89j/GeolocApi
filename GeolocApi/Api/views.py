@@ -7,7 +7,7 @@ from rest_framework.decorators import api_view
 import requests
 
 def viewother(request):
-    response = requests.get('http://api.ipstack.com/79.130.82.6?access_key=df4e81050c5f828e2fa0e228de5a27d2').json()
+    response = requests.get('').json()
     return render(request, 'viewother.html', {'response':response})
 
 @api_view(["GET"])
